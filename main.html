@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+    </style>
+  <link rel="stylesheet" href="main.css">
+  <title>Introduction to Elixir</title>
+</head>
+<body>
+<div>
+  <h1 id="logo">
+    <a href="Home.html"> <img src="artificial-intelligence%20(1).png" alt="brain logo"></a>
+  </h1>
+  <h1 class="logot">
+    <a href="Home.html"> <img src="deltalogo.png"></a>
+  </h1>
+</div>
+<header>
+  <div class="topnav">
+    <div class = "container">
+      <a>About </a>
+      <a> Blogs</a>
+      <a href="Home.html" style="color: white">Home</a>
+    </div>
+  </div>
+  <div class="header">
+  <h1 id="h1_main">Introduction to Elixir</h1>
+</div>
+</header>
+<div>
+<h1 >What is Elixir?</h1>
+<p>Elixir is a dynamic general-purpose programming language that is designed to build scalable concurrent applications. Elixir allows developers to be productive in multiple domains including website development, embedded software, data pipelines, and multimedia processing. It was created in 2012 by Jose Valim, as a research and development project. It runs on top of the <a href="https://en.wikipedia.org/wiki/BEAM_(Erlang_virtual_machine)" style="color: white">BEAM virtual machine</a>, which was created in the 1980s, to build massively scalable soft real-time systems with high availability. Valim wanted to create something that could enable higher extensibility and productivity in the Erlang VM while keeping its compatibility. Elixir was aimed to handle large volumes of data by keeping a low latency. It adapts the features from Erlang, Ruby, and Clojure.</p>
+</div>
+<br>
+<div>
+  <h1>What is Erlang or OTP?</h1>
+  <p>Erlang is a general purpose concurrent, functional programming language and garbage collecting concurrent system developed in 1986 by Ericsson for improved performance in telecommunication. The term Erlang and OTP(Open Telecom Platform) is interchangeably used, which consist of runtime system, several ready to use components written in Erlang program. Erlang was designed for systems with distributed, fault- tolerant and highly available traits. Talking about the processes, Erlang applications are built of very lightweight Erlang processes in Erlang runtime system . OTP (Open Telecom Platform) is a large collection of libraries for Erlang to d everything from compiling ASN1 to providing a WWW server. Whatsapp is coded using Erlang.</p>
+  <br>
+</div>
+<div>
+  <h1>What makes Elixir different?</h1>
+  <div>
+    <h2>Scalability</h2>
+    <p>Elixir code runs under lightweight threads of execution (processes) that exchanges the information via messages. Elixir has built-in schedular which makes it possible to scale vertically by adding more power to the machine. Due to concurrency, it is possible to scale horizontally by spawning multiple process in different machines in a cluster. Isolation is possible in elixir, which allows process to be garbage collected independently, reducing system wide pauses and resource usage, which helps in better efficiency. Processes can communicate with other processes in the same network, running in different machines. </p>
+  </div>
+  <br>
+  <div>
+    <h2>Concurrency</h2>
+    <p>Since elixir is built on top of erlang machine, it is possible to create multiple concurrent processes without any issues. An application running on Erlang virtual machine can make use of a lot of processes to execute functions in parallel as much as possible in a way more scalable than dealing with a common process. This is achieved by the actor model used by Erlang.</p>
+    <p><b>The Model</b>: The actor model is used in Erlang and consist simply of actors yours messages sent to your mailboxes. The message is not sent to the actor indeed, but to its mailbox and periodically the actor checks the box to attend the next message on the queue. In short actors are single threaded processes which can send and receive message amongst themselves. The Erlang machine manages their creation, execution, and communication.</p>
+  </div>
+  <br>
+  <div>
+    <h2>Fault-Tolerance</h2>
+    <p>Erlang and Elixir have reputation for their fault tolerance. It is not because they prevent errors instead, they have tools to recover from the errors that interrupts the runtime.  Unlike Java, Elixir uses supervisor behaviour to monitor the child processes, which means if a child process crashes, supervisor will restart it. It is more like when one user/ developer crashes, everything they used will be cleaned without affecting the performance of any other user. Supervisor modules spawn supervisor processes that link to other processes and watch for failures in the linked processes if they crash. This separation of concerns makes our code clearer and easier to maintain.</p>
+    <p>This how a supervisor behaviour looks like  for lib/kv/supervisor.ex file:</p>
+    <div id = fault_snippet>
+    <img src="carbono.png" alt="code snippet" id="snip">
+    </div>
+    <div>
+      <h2>Functional Programming</h2>
+      <p>Functional programming generally is using functions to the best effect for creating more understandable, clean, and maintainable code. Even though when Elixir is functional programming language, it is different from most of the other functional programming languages like Haskell or F#. This is because Elixir pragmatically handles concurrent systems with high fault tolerance. This means that Elixir is a functional programming language because this naturally fits it and not for its own sake. Since it runs on the top of the Erlang machine, it is inherently concurrent and distributed, but the syntax is very straight forward, unlike any other functional languages.</p>
+    </div>
+    <div>
+      <h2>Dynamic Typing</h2>
+      <p>Elixir is dynamically typed, just like Erlang and the BEAM. This means that types are checked in run-time, not during compilation. This can be a downside when building critical systems but when we think of creating simple web applications, it increases development speed. Moreover, static types can be introduced in Elixir through typespecs because they can be useful as they can be served as documentation and can also be used by static analysis tools like Dialyzer to find possible bugs..</p>
+    </div>
+    <div>
+      <br>
+      <h1>Tooling</h1>
+      <p>Elixir has a variety of development tools, which can make using elixir easier. Tooling is one of the best features of Elixir. Moreover, we can access and use the Erlang libraries, which has a mature ecosystem for decades. It includes Elixir’s interactive shell IEx, Mix, ExUnit, Credo, Dialyzer, TypedEchtoSchema, Kaffy, Libcluster.</p>
+      <br>
+      <h3>IEx</h3>
+      <p>IEx is your best friend when you are using Elixir because it does help a lot more than the usual windows PowerShell. IEx has the autocomplete functionality that helps in complete the unfamiliar new keywords or modules. Every time IEx starts , it starts looking for a .iex.exs file, if not present in the current directory, it searches in the home directory to find one. ‘h’ is one of the most useful tools in Elixir since it helps in finding the words in the code. It works somewhat like a search button and searches for that word. There are many similar prompts that helps in Elixir shell, for different purposes like i, r and t.</p>
+      <br>
+      <h3>Credo</h3>
+      <p>Credo is linter and static analysis linter tool that helps in improving elixir code quality. It helps in finding proper coding standards like using proper naming standards, improper or inconsistent language construct etc. Integrating credo into pre-commit helps in finding errors or warnings in the code.</p>
+      <br>
+      <h3>Dialyzer</h3>
+      <p>Since Elixir used dynamic typing, dialyzer is a tool that helps in using the static typing method in Elixir. Its more like dialyzer helps in finding all the errors and bugs the code would have if it was using static typing. Dialyzer helps in finding the bugs and also as a bonus, it discovers hidden bugs or other issues too.</p>
+      <br>
+      <h3>Mix</h3>
+      <p>Mix is used to compile and run your application, manage your dependencies, run tests and also is used for profiling the code. It helps in generating the projects folder structure and necessary boilerplate. Mix compiles the changes in the program when necessary, but it still will be needed to compile the project.</p>
+      <br>
+      <h3>Kaffy</h3>
+      <p>Kaffy is used in generating admin interface automatically from the Ecto scheme in the app. It is similar phpMyAdmin for PH[ or Active admins for Rails. The application might out grow Kaffy but to get an admin interface up and running quickly for internal usage, Kaffy is amazing.</p>
+      <br>
+    </div>
+    <div id="div_ft">
+      <br>
+      <h1>Who uses Elixir?</h1>
+      <p>
+        <b><a href="https://www.adobe.com/ca/creativecloud/business/teams.html?sdid=B16P3W9X&mv=search&ef_id=Cj0KCQiAlKmeBhCkARIsAHy7WVvL-nJLPDMfB-0og-GNAtKcPldW3RHaNWwZVW9JjT55CuRR_HpRuzcaAvHuEALw_wcB:G:s&s_kwcid=AL!3085!3!566814725940!e!!g!!adobe!15482932272!136265042368" style="color: white"> Adobe</a></b>: Used Elixir to build cloud application for a collaborative photography workflow.<br>
+        <br>
+        <b><a href="https://discord.com/" style="color: white">Discord</a></b>: Use Elixir for their large-scale message=ing system with more than 5 million concurrent users.<br>
+        <br>
+        <b><a href="https://moz.com/" style="color: white">Moz</a></b>: Uses Elixir for the backend of digital marketing and Moz Pro.<br>
+        <br>
+        <b><a href="https://www.ft.com/" style="color: white"> Financial Times</a></b> Used Elixir foe multiple application development.<br>
+        <br>
+        <b><a href="https://www.motorola.ca/" style="color: white">Motorola</a></b>: Uses both Erlang and Elixir for their communication system that need to be reliable and fault-tolerant.<br>
+        <br>
+        <b><a href="https://www.heroku.com/" style="color: white">Heroku</a></b>: Used Elixir for rewriting their licensing and financial services.<br>
+        <br>
+        <b><a href="https://www.x-plane.com/" style="color: white"> X-Plane</a></b>:Used Elixir in modelling the new multiplayer phase in the simulator.<br>
+      </p>
+      <!-- <div>
+        <img src="/img/footer.png" id="footer_im">
+      </div> !-->
+
+    </div>
+  </div>
+</div>
+<div>
+  <p>Feel like trying Elixir? Go ahead! <a href="https://elixir-lang.org/install.html" style="color: #2596be"> Download and install Elixir</a></p>
+</div>
+</body>
+</html>
